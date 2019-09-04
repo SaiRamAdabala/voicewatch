@@ -26,7 +26,7 @@ Thread.sleep(12000);
  
  
  //Wait Time
- Thread.sleep(25000);
+ Thread.sleep(30000);
  
  
 //Conditional Wait as Explicit
