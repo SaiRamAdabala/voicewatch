@@ -62,7 +62,7 @@ System.out.println(actualvp1);
  //Verification Point1 for Dashboard Page
 	if(actualvp1.contains("Overall Performance"))
 	{
-		System.out.println("Login Scusess,Currently in Dashboard Page-Test Passed");
+		System.out.println("Login Success,Currently in Dashboard Page-Test Passed");
 	}
 	else
 	{
@@ -145,11 +145,11 @@ Thread.sleep(25000);
 			System.out.println(actualvp4);
 			if(actualvp4.contains("Sign in to continue"))
 			{
-				System.out.println("Logout Scusess-Test Passed");
+				System.out.println("Logout Success-Test Passed");
 			}
 			else
 			{
-				System.out.println("Login Failed-Test Failed");
+				System.out.println("Logout Failed-Test Failed");
 			}
 			Thread.sleep(10000);
  //Close Browser
