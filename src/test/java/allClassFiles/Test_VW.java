@@ -15,7 +15,7 @@ public class Test_VW {
 	public void voicewatch() throws InterruptedException {
 	//Launch Chrome  Browser
 		
-System.setProperty("webdriver.chrome.driver","C:\\Users\\asaiprasanth\\Downloads\\EHCM\\MyTools\\voicewatch\\drivers\\chromedriver.exe");
+System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
 WebDriver driver=new ChromeDriver();
 
 //Goto test url http://www.google.com
