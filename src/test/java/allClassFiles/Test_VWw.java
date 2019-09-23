@@ -10,9 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 
-public class Test_VW {
+public class Test_VWw {
 public WebDriver driver;
-public WebDriverWait w;
 
 @Test(priority=1)
 	public void launchvoicewatch() throws InterruptedException {
@@ -24,21 +23,20 @@ System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
 
 //Goto test url http://www.google.com
  driver.get("https://services.empirix.com/");
-/*//Wait Time
-Thread.sleep(12000);*/
-//Conditional Wait as Explicit
-w=new WebDriverWait(driver,100);
-	w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//input[@name='callback_0']/following::*[11]"), "Forgot Password?"));
+//Wait Time
+Thread.sleep(12000);
  driver.manage().window().maximize();
  
  
  //Wait Time
- //Thread.sleep(30000);
+ Thread.sleep(30000);
 }
 @Test(priority=2)
 public void login_VoiceWatch() throws InterruptedException
 {
-Thread.sleep(5000);
+//Conditional Wait as Explicit
+/*	WebDriverWait w=new WebDriverWait(driver,100);
+	w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//input[@name='callback_0']/following::*[11]"), "Forgot Password?"));*/
 
  driver.findElement(By.xpath("//input[@name='callback_0']")).sendKeys("empirix_QAselenium");
 
@@ -49,9 +47,8 @@ driver.findElement(By.xpath("//input[@name='callback_1']")).sendKeys("Empirix123
 Thread.sleep(5000);
 
 driver.findElement(By.xpath("//input[@name='callback_2']")).click();
-w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@id='wrapper']/header/section[2]/div/ul/li[1]/a"), "Dashboard"));
-/*//Wait Time
-Thread.sleep(40000);*/
+//Wait Time
+Thread.sleep(40000);
 }
 
 @Test(priority=3)
@@ -87,12 +84,12 @@ public void verifyTestsPage() throws InterruptedException
 {
 //Click on Tests	
 	driver.findElement(By.xpath("//*[@id='wrapper']/header/section[2]/div/ul/li[5]/a")).click();
-/*//Wait Time
-	 Thread.sleep(25000);*/
+//Wait Time
+	 Thread.sleep(25000);
 	  
 	
 	//Conditional Wait as Explicit
-	w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[text()='Please select a test']"), "Please select a test"));
+	//w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[text()='Please select a test']"), "Please select a test"));
 	
 	WebElement tests= driver.findElement(By.xpath("//span[text()='Please select a test']"));
 	String actualvp2=tests.getText();
@@ -117,11 +114,11 @@ public void verifyScriptssPage() throws InterruptedException
 		
 //Click on Scripts		
 		driver.findElement(By.xpath("//a[contains(text(),'Scripts')]")).click();
-/*//Wait Time
-Thread.sleep(25000);*/
+//Wait Time
+Thread.sleep(25000);
 
 		//Conditional Wait as Explicit
-		w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(text(),'Please select a script or')]"), "Please select a script or"));
+		//w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(text(),'Please select a script or')]"), "Please select a script or"));
 		
 		
 		WebElement scripts= driver.findElement(By.xpath("//span[contains(text(),'Please select a script or')]"));
@@ -150,13 +147,13 @@ public void logout_VoiceWatch() throws InterruptedException
 			driver.findElement(By.xpath("//span[@class='caret']")).click();
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
-/* //Wait Time
- Thread.sleep(20000);*/
+			 //Wait Time
+			 Thread.sleep(20000);
 			 
 			
 			
 			//Conditional Wait as Explicit
-			w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//strong[contains(text(),'Sign in to continue')]"), "Sign in to continue"));
+			//w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//strong[contains(text(),'Sign in to continue')]"), "Sign in to continue"));
 			
 			
 			//Verification Point4 for Logout conformation
