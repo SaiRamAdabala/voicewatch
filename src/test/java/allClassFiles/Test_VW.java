@@ -11,12 +11,15 @@ import org.testng.annotations.Test;
 
 
 public class Test_VW {
-@Test
-	public void voicewatch() throws InterruptedException {
+public WebDriver driver;
+
+@Test(priority=1)
+	public void launchvoicewatch() throws InterruptedException {
 	//Launch Chrome  Browser
+	
 		
 System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-WebDriver driver=new ChromeDriver();
+ driver=new ChromeDriver();
 
 //Goto test url http://www.google.com
  driver.get("https://services.empirix.com/");
@@ -27,8 +30,10 @@ Thread.sleep(12000);
  
  //Wait Time
  Thread.sleep(30000);
- 
- 
+}
+@Test(priority=2)
+public void login_VoiceWatch() throws InterruptedException
+{
 //Conditional Wait as Explicit
 /*	WebDriverWait w=new WebDriverWait(driver,100);
 	w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//input[@name='callback_0']/following::*[11]"), "Forgot Password?"));*/
@@ -44,7 +49,11 @@ Thread.sleep(5000);
 driver.findElement(By.xpath("//input[@name='callback_2']")).click();
 //Wait Time
 Thread.sleep(40000);
+}
 
+@Test(priority=3)
+public void verifyDashboardPage() throws InterruptedException
+{
 
 //Click on Dashboard
 driver.findElement(By.xpath("//*[@id='wrapper']/header/section[2]/div/ul/li[1]/a")).click();
@@ -68,7 +77,11 @@ System.out.println(actualvp1);
 		System.out.println("Login Failed,Currently not in Dashboard Page-Test Failed");
 	}
 	Thread.sleep(10000);
+}
 	
+@Test(priority=4)
+public void verifyTestsPage() throws InterruptedException
+{
 //Click on Tests	
 	driver.findElement(By.xpath("//*[@id='wrapper']/header/section[2]/div/ul/li[5]/a")).click();
 //Wait Time
@@ -93,6 +106,11 @@ System.out.println(actualvp1);
 			System.out.println("Currently not in Tests Page-Test Failed");
 		}
 		Thread.sleep(10000);
+}
+
+@Test(priority=5)
+public void verifyScriptssPage() throws InterruptedException
+{
 		
 //Click on Scripts		
 		driver.findElement(By.xpath("//a[contains(text(),'Scripts')]")).click();
@@ -120,9 +138,11 @@ Thread.sleep(25000);
 				System.out.println("Currently not in Scripts Page-Test Failed");
 			}
 			Thread.sleep(10000);
+}		
 			
-			
-			
+@Test(priority=6)
+public void logout_VoiceWatch() throws InterruptedException
+{		
 		//Logout 
 			driver.findElement(By.xpath("//span[@class='caret']")).click();
 			Thread.sleep(10000);
