@@ -168,7 +168,9 @@ public void logout_VoiceWatch() throws InterruptedException
 {		
 		//Logout 
 			driver.findElement(By.xpath("//span[@class='caret']")).click();
-			Thread.sleep(10000);
+//Thread.sleep(10000);
+			//Conditional Wait as Explicit
+			w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//span[contains(text(),'Logout')]"), "Logout"));
 			driver.findElement(By.xpath("//span[contains(text(),'Logout')]")).click();
 /* //Wait Time
  Thread.sleep(20000);*/
