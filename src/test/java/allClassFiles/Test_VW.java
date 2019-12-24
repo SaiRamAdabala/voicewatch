@@ -30,7 +30,7 @@ System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
 /*//Wait Time
 Thread.sleep(12000);*/
 //Conditional Wait as Explicit
-w=new WebDriverWait(driver,100);
+w=new WebDriverWait(driver,150);
 	w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//input[@name='callback_0']/following::*[11]"), "Forgot Password?"));
  driver.manage().window().maximize();
  
@@ -41,15 +41,15 @@ w=new WebDriverWait(driver,100);
 @Test(priority=2)
 public void login_VoiceWatch() throws InterruptedException
 {
-Thread.sleep(5000);
+Thread.sleep(9000);
 
  driver.findElement(By.xpath("//input[@name='callback_0']")).sendKeys("empirix_QAselenium");
 
 //Wait Time
-Thread.sleep(5000);
+Thread.sleep(9000);
 driver.findElement(By.xpath("//input[@name='callback_1']")).sendKeys("Password!23");
 //Wait Time
-Thread.sleep(5000);
+Thread.sleep(9000);
 
 driver.findElement(By.xpath("//input[@name='callback_2']")).click();
 w.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*[@id='wrapper']/header/section[2]/div/ul/li[1]/a"), "Dashboard"));
@@ -69,7 +69,7 @@ String actualvp=login.getText();
 		System.out.println("Login Failed,Test Failed");
 	}
 	System.out.println(actualvp);
-	Thread.sleep(10000);
+	Thread.sleep(13000);
 
 }
 
@@ -79,7 +79,7 @@ public void verifyDashboardPage() throws InterruptedException
 
 //Click on Dashboard
 driver.findElement(By.xpath("//*[@id='wrapper']/header/section[2]/div/ul/li[1]/a")).click();
-Thread.sleep(5000);
+Thread.sleep(8000);
 //Scroll from Top to Bottom
 JavascriptExecutor js=(JavascriptExecutor)driver;
 
@@ -127,7 +127,7 @@ public void verifyTestsPage() throws InterruptedException
 			System.out.println("Currently not in Tests Page-Test Failed");
 		}
 		System.out.println(actualvp2);
-		Thread.sleep(10000);
+		Thread.sleep(13000);
 }
 
 @Test(priority=5)
@@ -160,7 +160,7 @@ Thread.sleep(25000);*/
 				System.out.println("Currently not in Scripts Page-Test Failed");
 			}
 			System.out.println(actualvp3);
-			Thread.sleep(10000);
+			Thread.sleep(13000);
 }		
 			
 @Test(priority=6)
@@ -196,7 +196,7 @@ public void logout_VoiceWatch() throws InterruptedException
 				System.out.println("Logout Failed-Test Failed");
 			}
 			System.out.println(actualvp4);
-			Thread.sleep(10000);
+			Thread.sleep(13000);
  //Close Browser
  
  driver.close();
